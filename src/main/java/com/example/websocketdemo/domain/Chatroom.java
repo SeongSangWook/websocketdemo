@@ -1,20 +1,22 @@
 package com.example.websocketdemo.domain;
 
-public class User {
+import java.util.ArrayList;
+import java.util.List;
+
+import com.example.websocketdemo.entity.MessageEntity;
+
+public class Chatroom {
 	private long id; // primary key
-	private String userId; // unique key
-	private String userPw;	
 	private String name;
-
+	//private List<Message> messages = new ArrayList<Message>();
 	
-	public User()  {}
-	public User(String userId, String userPw, String name) {
+	public Chatroom()  {}
+	public Chatroom(String userId, String name, List<Message> messages) {
 		super();
-		this.userId = userId;
-		this.userPw = userPw;
 		this.name = name;
-
+		//this.messages = messages;
 	}
+	
 	
 	public long getId() {
 		return id;
@@ -22,25 +24,22 @@ public class User {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	public String getUserPw() {
-		return userPw;
-	}
-	public void setUserPw(String userPw) {
-		this.userPw = userPw;
-	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+	/*
+	public List<Message> getMessages() {
+		return messages;
+	}
+	public void setMessages(List<Message> messages) {
+		this.messages = messages;
+	}
+	*/
 	
+	/*
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -56,7 +55,7 @@ public class User {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (User) obj;
+		Chatroom other = (Chatroom) obj;
 		if (userId == null) {
 			if (other.userId != null)
 				return false;
@@ -64,4 +63,5 @@ public class User {
 			return false;
 		return true;
 	}
+	*/
 }
